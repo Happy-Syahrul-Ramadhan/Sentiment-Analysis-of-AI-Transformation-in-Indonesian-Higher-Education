@@ -5,7 +5,9 @@ Dataset : https://www.kaggle.com/datasets/bintangaprianta/sentimen-chatgpt-mahas
 
 Anggota kelompok : </br>
 Happy Syahrul Ramadhan - Sains Data - 122450013 </br>
+Username Github : happy-syahrul-ramadhan </br>
 Ahmad Sahidin Akbar - Sains Data - 122450044 </br>
-Karin Yehezkiel Sinaga - Sains Aktuaria - 123410029 
-
+Username Github : Masahid </br>
+Karin Yehezkiel Sinaga - Sains Aktuaria - 123410029 </br>
+Username Github : karinyehzkielsinaga
 
