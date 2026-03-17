@@ -1,6 +1,8 @@
 # Sentiment-Analysis-of-AI-Transformation-in-Indonesian-Higher-Education
 Tugas Besar Matakuliah Natural Language Processing
 
+Dataset : https://www.kaggle.com/datasets/bintangaprianta/sentimen-chatgpt-mahasiswa
+
 Anggota kelompok : </br>
 Happy Syahrul Ramadhan - Sains Data - 122450013 </br>
 Ahmad Sahidin Akbar - Sains Data - 122450044 </br>
