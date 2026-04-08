@@ -13,7 +13,7 @@
 | Nama | NIM | Jurusan | GitHub |
 |------|-----|---------|--------|
 | Happy Syahrul Ramadhan | 122450013 | Sains Data | [@Happy-Syahrul-Ramadhan](https://github.com/Happy-Syahrul-Ramadhan) |
-| Ahmad Sahidin Akbar | 122450044 | Sains Data | [@Masahid](https://github.com/Masahid) |
+| Ahmad Sahidin Akbar | 122450044 | Sains Data | [@Masahid](https://github.com/AhmadSahidinAkbar) |
 | Karin Yehezkiel Sinaga | 123410029 | Sains Aktuaria | [@karinyehzkielsinaga](https://github.com/karinyehzkielsinaga) |
 
 ---
