@@ -2,6 +2,18 @@
 
 **Tugas Besar Matakuliah Natural Language Processing (NLP)**
 
+---
+
+## 👥 Anggota TIM
+
+| Nama | NIM | Jurusan | GitHub |
+|------|-----|---------|--------|
+| Happy Syahrul Ramadhan | 122450013 | Sains Data | [@Happy-Syahrul-Ramadhan](https://github.com/Happy-Syahrul-Ramadhan) |
+| Ahmad Sahidin Akbar | 122450044 | Sains Data | [@Masahid](https://github.com/Masahid) |
+| Karin Yehezkiel Sinaga | 123410029 | Sains Aktuaria | [@karinyehzkielsinaga](https://github.com/karinyehzkielsinaga) |
+
+---
+
 ## 📝 Deskripsi Proyek
 
 Proyek ini menyelidiki sentimen opini mahasiswa Indonesia terhadap penggunaan Artificial Intelligence (AI) dalam konteks pendidikan tinggi. Menggunakan teknik Natural Language Processing dan Machine Learning, kami membangun model klasifikasi untuk menganalisis apakah opini terhadap penggunaan AI bersifat **Positif**, **Netral**, atau **Negatif**.
@@ -139,17 +151,7 @@ numpy>=1.24.0
 openpyxl  # untuk read Excel files
 ```
 
----
 
-## 👥 Anggota Kelompok
-
-| Nama | NIM | Jurusan | GitHub |
-|------|-----|---------|--------|
-| Happy Syahrul Ramadhan | 122450013 | Sains Data | [@Happy-Syahrul-Ramadhan](https://github.com/Happy-Syahrul-Ramadhan) |
-| Ahmad Sahidin Akbar | 122450044 | Sains Data | [@Masahid](https://github.com/Masahid) |
-| Karin Yehezkiel Sinaga | 123410029 | Sains Aktuaria | [@karinyehzkielsinaga](https://github.com/karinyehzkielsinaga) |
-
----
 
 ## 📖 Referensi & Sumber Daya
 
