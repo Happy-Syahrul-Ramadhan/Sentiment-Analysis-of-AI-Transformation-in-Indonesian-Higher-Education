@@ -1,6 +1,10 @@
 # 🤖 Sentiment Analysis: AI Transformation in Indonesian Higher Education
 
-**Tugas Besar Matakuliah Natural Language Processing (NLP)**
+## 🎨 Web Application
+
+**Live Demo**: [Hugging Face Spaces](https://huggingface.co/spaces/syahrul19112003/deteksi-sentimen-terhadap-penggunaan-AI-di-lingkungan-perguruan-tinggi)
+
+**Natural Language Processing (NLP)**
 
 ---
 
@@ -111,10 +115,6 @@ python app.py
 
 ---
 
-## 🎨 Web Application
-
-**Live Demo**: [Hugging Face Spaces](https://huggingface.co/spaces/syahrul19112003/deteksi-sentimen-terhadap-penggunaan-AI-di-lingkungan-perguruan-tinggi)
-
 ### Fitur
 - ✅ Input teks bebas tentang opini AI
 - ✅ Prediksi sentimen real-time
@@ -126,20 +126,6 @@ python app.py
 - **Backend**: Python (scikit-learn)
 - **Deployment**: Hugging Face Spaces
 
----
-
-## 📊 Model Performance
-
-| Metric | Value |
-|--------|-------|
-| Accuracy | XX% |
-| Precision | XX% |
-| Recall | XX% |
-| F1-Score | XX% |
-
-*Note: Update metrics setelah final training*
-
----
 
 ## 📚 Dependencies
 
