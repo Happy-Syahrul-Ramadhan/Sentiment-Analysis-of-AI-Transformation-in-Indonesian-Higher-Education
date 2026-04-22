@@ -66,22 +66,106 @@ Proyek ini menyelidiki sentimen opini mahasiswa Indonesia terhadap penggunaan Ar
 
 ---
 
-## 📁 Struktur Proyek
+## � Model Performance & Training Results
+
+### 🏆 Final Results
+
+| Metric | Value |
+|--------|-------|
+| **Test Accuracy** | **82.14%** |
+| **Precision** | **82.14%** |
+| **Recall** | **82.14%** |
+| **F1-Score** | **82.14%** |
+| **Best Model** | **SVM** (Val Acc: 87.25%) |
+
+### 🚀 SENTIMENT ANALYSIS - TRAINING WITH COMBINED DATA
+
+#### 📄 Data Loading & Preparation
+
+```
+Loading: combined_training_data.csv
+   ✓ Encoding: utf-8
+   Total rows: 2,295
+```
+
+**Class Distribution:**
+| Kelas | Count | Persentase |
+|-------|-------|-----------|
+| Negative | 1,158 | 50.5% |
+| Neutral | 0 | 0.0% |
+| Positive | 1,137 | 49.5% |
+
+**Data Split (Train:Val:Test = 80:10:10):**
+- Train: 1,632 samples (80%)
+- Val: 204 samples (10%)
+- Test: 459 samples (10%)
+
+#### 📝 Feature Extraction
+
+```
+TF-IDF Vectorization:
+   ✓ Feature matrix shape: (1,632, 2,257)
+   ✓ N-grams: Unigram & Bigram
+```
+
+#### ▶️ Model Training Comparison
+
+| Model | Validation Accuracy | Training Time |
+|-------|-------------------|---------------|
+| Naive Bayes | 84.80% | 0.00s |
+| Random Forest | 62.25% | 0.19s |
+| **SVM ⭐** | **87.25%** | **0.15s** |
+
+#### 🧪 Test Set Evaluation
+
+**Detailed Classification Report:**
+```
+                precision    recall  f1-score   support
+
+    Negative       0.83      0.82      0.82       232
+    Positive       0.82      0.82      0.82       227
+
+    accuracy                           0.82       459
+   macro avg       0.82      0.82      0.82       459
+weighted avg       0.82      0.82      0.82       459
+```
+
+---
+
+## �📁 Struktur Proyek
 
 ```
 sentimen analisis/
+├── Deep Learning/                  # Deep Learning module with full training
+│   ├── data/
+│   │   ├── combined_training_data.csv    # Combined dataset (2,295 rows)
+│   │   ├── data_ai.csv
+│   │   ├── negasi.txt
+│   │   ├── s-neg.txt
+│   │   └── s-pos.txt
+│   ├── models/
+│   │   ├── sentiment_classifier.pkl     # Trained classifier model
+│   │   └── vectorizer.pkl               # TF-IDF vectorizer
+│   ├── plots/
+│   │   └── training_metrics.csv
+│   ├── clean_combined_data.py
+│   ├── clean_data.py
+│   ├── data_preprocessing.py
+│   ├── datareader.py
+│   ├── model.py
+│   ├── remove_neutral.py
+│   ├── train.py
+│   ├── training.py
+│   └── utils.py
 ├── data/
-│   └── data_ai.xlsx              # Dataset mentah
-├── models/
-│   ├── svm_model.pkl             # Trained SVM model
-│   └── tfidf_vectorizer.pkl      # TF-IDF vectorizer
+│   └── data_ai.xlsx              # Original dataset
 ├── notebook/
-│   └── sentiment_analisis_about_AI_in_Academic.ipynb  # Data exploration & preprocessing
+│   └── sentiment_analisis_about_AI_in_Academic.ipynb
 ├── deteksi-opini-terhadap-penggunaan-ai/
 │   ├── app.py                    # Gradio web app
-│   ├── requirements.txt           # Python dependencies
-│   └── README.md                  # App documentation
-└── README.md                       # Dokumentasi proyek
+│   ├── requirements.txt
+│   └── README.md
+└── readme.md                      # Dokumentasi proyek
 ```
 
 ---
@@ -111,6 +195,13 @@ pip install -r requirements.txt
 ```bash
 python app.py
 # Akses di: http://localhost:7860
+```
+
+### 4. Run Deep Learning Training (Optional)
+```bash
+cd "Deep Learning"
+python training.py
+# Output: trained models, metrics, dan evaluation results
 ```
 
 ---
