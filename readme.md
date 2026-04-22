@@ -69,16 +69,19 @@ Proyek ini menyelidiki sentimen opini mahasiswa Indonesia terhadap penggunaan Ar
 
 ### 🏆 Model Comparison - Final Results
 
-Confision Matriks
-<img width="761" height="590" alt="Image" src="https://github.com/user-attachments/assets/51890ad5-2b38-4184-a209-bfdf575b405d" />
+| Metric | **SVM (TF-IDF)** | **DistilBERT (Deep Learning)** |
+|--------|-------------------|-------------------------------|
+| **Test Accuracy** | 82.14% | **85.22%** ⭐ |
+| **Precision** | 82.14% | 85.47% |
+| **Recall** | 82.14% | 85.18% |
+| **F1-Score** | 82.14% | **85.18%** ⭐ |
+| **Test Loss** | - | 0.2607 |
+| **Best Model** | Val Acc: 87.25% | **Highest Performance** ✅ |
 
-| Metric | Value |
-|--------|-------|
-| **Test Accuracy** | **82.14%** |
-| **Precision** | **82.14%** |
-| **Recall** | **82.14%** |
-| **F1-Score** | **82.14%** |
-| **Best Model** | **SVM** (Val Acc: 87.25%) |
+**Kesimpulan**: DistilBERT menunjukkan performa superior dengan accuracy 85.22% dan F1-Score 85.18%, mengalahkan SVM dengan margin 3.08%.
+
+**📊 Confusion Matrix:**
+![Confusion Matrix](https://github.com/user-attachments/assets/51890ad5-2b38-4184-a209-bfdf575b405d)
 
 ### 🚀 SENTIMENT ANALYSIS - TRAINING WITH COMBINED DATA
 
