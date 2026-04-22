@@ -68,15 +68,18 @@ Proyek ini menyelidiki sentimen opini mahasiswa Indonesia terhadap penggunaan Ar
 
 ## � Model Performance & Training Results
 
-### 🏆 Final Results
+### 🏆 Model Comparison - Final Results
 
-| Metric | Value |
-|--------|-------|
-| **Test Accuracy** | **82.14%** |
-| **Precision** | **82.14%** |
-| **Recall** | **82.14%** |
-| **F1-Score** | **82.14%** |
-| **Best Model** | **SVM** (Val Acc: 87.25%) |
+| Metric | **SVM (TF-IDF)** | **DistilBERT (Deep Learning)** |
+|--------|-------------------|-------------------------------|
+| **Test Accuracy** | 82.14% | **85.22%** ⭐ |
+| **Precision** | 82.14% | 85.47% |
+| **Recall** | 82.14% | 85.18% |
+| **F1-Score** | 82.14% | **85.18%** ⭐ |
+| **Test Loss** | - | 0.2607 |
+| **Best Model** | Val Acc: 87.25% | **Highest Performance** ✅ |
+
+**Kesimpulan**: DistilBERT menunjukkan performa superior dengan accuracy 85.22% dan F1-Score 85.18%, mengalahkan SVM dengan margin 3.08%.
 
 ### 🚀 SENTIMENT ANALYSIS - TRAINING WITH COMBINED DATA
 
@@ -118,7 +121,7 @@ TF-IDF Vectorization:
 
 #### 🧪 Test Set Evaluation
 
-**Detailed Classification Report:**
+**SVM Classification Report:**
 ```
                 precision    recall  f1-score   support
 
@@ -132,7 +135,130 @@ weighted avg       0.82      0.82      0.82       459
 
 ---
 
-## �📁 Struktur Proyek
+### 🤖 DEEP LEARNING - DistilBERT Model Training
+
+#### 📋 Architecture & Configuration
+```
+Model: DistilBERT (Hugging Face)
+   ✓ Pre-trained: Distilled version of BERT
+   ✓ Parameters: 66M (lightweight)
+   ✓ Input: Tokenized text sequences
+   ✓ Output: Sentiment classification (binary)
+```
+
+#### 🧪 DistilBERT - Test Set Evaluation
+
+**Overall Metrics:**
+```
+Test Loss:     0.2607
+Test Accuracy: 85.22%
+Test F1-Score: 85.18%
+```
+
+**Detailed Classification Report:**
+```
+              precision    recall  f1-score   support
+
+    negative       0.8254    0.8966    0.8595       116
+    positive       0.8846    0.8070    0.8440       114
+
+    accuracy                         0.8522       230
+   macro avg       0.8550    0.8518    0.8518       230
+weighted avg       0.8547    0.8522    0.8518       230
+```
+
+**Per-Class Performance:**
+
+| Kelas | Precision | Recall | F1-Score | Support |
+|-------|-----------|--------|----------|---------|
+| Negative | 0.8254 | 0.8966 | 0.8595 | 116 |
+| Positive | 0.8846 | 0.8070 | 0.8440 | 114 |
+| **Weighted Avg** | **0.8547** | **0.8522** | **0.8518** | **230** |
+
+#### 📊 Model Insights
+
+✅ **Superior Performance**:
+   - Accuracy 3.08% lebih tinggi dari SVM (85.22% vs 82.14%)
+   - F1-Score 3.04% lebih tinggi (85.18% vs 82.14%)
+   - Balanced precision dan recall untuk kedua kelas
+
+✅ **Per-Class Analysis**:
+   - Negative class: Recall lebih tinggi (89.66%) - lebih sensitif mendeteksi negatif
+   - Positive class: Precision lebih tinggi (88.46%) - lebih akurat memprediksi positif
+   - Trade-off yang sehat antara kedua metrik
+
+✅ **Regularization Effectiveness**:
+   - Test Loss rendah (0.2607) menunjukkan good generalization
+   - Minimal gap antara training dan test performance
+
+---
+
+### 📈 Model Comparison & Recommendation
+
+#### Performa Keseluruhan
+
+```
+SVM (TF-IDF) vs DistilBERT:
+├── SVM
+│   ├── Test Acc: 82.14%
+│   ├── Training: Cepat (0.15s)
+│   ├── Feature: Manual (TF-IDF)
+│   └── Interpretability: Tinggi ✓
+│
+└── DistilBERT ⭐
+    ├── Test Acc: 85.22% (BEST)
+    ├── Training: Moderate (GPU optimized)
+    ├── Feature: Automatic (Pre-trained embeddings)
+    └── Interpretability: Moderate
+```
+
+#### 🎯 Rekomendasi
+
+- **Untuk Production**: Gunakan **DistilBERT** untuk akurasi maksimal (85.22%)
+- **Untuk Deployment**: SVM lebih ringan, cocok untuk resource-limited environments
+- **Untuk Research**: DistilBERT memberikan insights deeper tentang contextual meaning
+- **Hybrid Approach**: Bisa ensemble kedua model untuk robustness maksimal
+
+---
+
+## 🛠️ Metodologi Pendekatan Dual-Model
+
+Proyek ini mengimplementasikan **dua pendekatan berbeda** untuk klasifikasi sentimen:
+
+### 1️⃣ **Traditional Machine Learning - SVM**
+- **Feature Engineering**: Manual menggunakan TF-IDF + N-grams
+- **Model**: Support Vector Machine dengan RBF kernel
+- **Kelebihan**: 
+  - Fast training time (0.15s)
+  - Interpretable decision boundaries
+  - Low computational requirements
+- **Kelemahan**:
+  - Memerlukan preprocessing yang careful
+  - Tidak memanfaatkan contextual information
+
+### 2️⃣ **Deep Learning - DistilBERT** 
+- **Feature Engineering**: Automatic menggunakan pre-trained transformer
+- **Model**: DistilBERT (distilled BERT) fine-tuned untuk klasifikasi biner
+- **Kelebihan**:
+  - Contextual word embeddings
+  - Superior performance (85.22% accuracy)
+  - Transfer learning dari dataset besar
+- **Kelemahan**:
+  - Lebih resource-intensive
+  - Membutuhkan GPU untuk training optimal
+  - Kurang interpretable (black-box)
+
+### 📊 Perbandingan Metodologi
+
+| Aspek | SVM (TF-IDF) | DistilBERT |
+|-------|-------------|-----------|
+| Feature Extraction | Manual | Automatic |
+| Preprocessing | Intensif | Minimal |
+| Accuracy | 82.14% | **85.22%** |
+| Training Speed | ⚡ Cepat | ⏱️ Moderate |
+| Resource Usage | 💾 Rendah | 💪 Tinggi |
+| Context Understanding | ❌ Limited | ✅ Excellent |
+| Interpretability | ✅ Tinggi | ⚠️ Rendah |
 
 ```
 sentimen analisis/
@@ -200,8 +326,22 @@ python app.py
 ### 4. Run Deep Learning Training (Optional)
 ```bash
 cd "Deep Learning"
+
+# Run SVM Training
 python training.py
-# Output: trained models, metrics, dan evaluation results
+
+# Run DistilBERT Training (requires GPU for optimal performance)
+python train_distilbert.py
+# atau
+python train.py
+
+# Output: trained models, metrics, evaluation results, dan visualizations
+```
+
+### 5. Model Comparison
+```bash
+# Compare SVM vs DistilBERT predictions
+python compare_models.py
 ```
 
 ---
@@ -221,11 +361,19 @@ python training.py
 ## 📚 Dependencies
 
 ```
+# Web App
 gradio>=4.0.0
 pandas>=2.0.0
-scikit-learn>=1.3.0
 numpy>=1.24.0
-openpyxl  # untuk read Excel files
+openpyxl
+
+# Machine Learning
+scikit-learn>=1.3.0
+
+# Deep Learning
+torch>=2.0.0
+transformers>=4.30.0
+datasets>=2.12.0
 ```
 
 
