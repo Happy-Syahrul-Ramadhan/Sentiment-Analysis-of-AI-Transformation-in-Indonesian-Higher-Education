@@ -20,7 +20,7 @@
 
 ## 📝 Deskripsi Proyek
 
-Proyek ini menyelidiki sentimen opini mahasiswa Indonesia terhadap penggunaan Artificial Intelligence (AI) dalam konteks pendidikan tinggi. Menggunakan teknik Natural Language Processing dan Machine Learning, kami membangun model klasifikasi untuk menganalisis apakah opini terhadap penggunaan AI bersifat **Positif**, **Netral**, atau **Negatif**.
+Proyek ini menyelidiki sentimen opini mahasiswa Indonesia terhadap penggunaan Artificial Intelligence (AI) dalam konteks pendidikan tinggi. Menggunakan teknik Natural Language Processing dan Machine Learning, kami membangun model klasifikasi untuk menganalisis apakah opini terhadap penggunaan AI bersifat **Positif**, atau **Negatif**.
 
 ### 🎯 Tujuan
 - Memahami sentimen dan persepsi mahasiswa terhadap AI di perguruan tinggi
@@ -35,7 +35,6 @@ Proyek ini menyelidiki sentimen opini mahasiswa Indonesia terhadap penggunaan Ar
 - **Jumlah Data**: ~1000+ tweets/opini
 - **Label**: 
   - `1` - Positif (mendukung penggunaan AI)
-  - `0` - Netral (objektif, tanpa opini jelas)
   - `-1` - Negatif (kritis/khawatir)
 - **Bahasa**: Indonesian
 
@@ -70,16 +69,16 @@ Proyek ini menyelidiki sentimen opini mahasiswa Indonesia terhadap penggunaan Ar
 
 ### 🏆 Model Comparison - Final Results
 
-| Metric | **SVM (TF-IDF)** | **DistilBERT (Deep Learning)** |
-|--------|-------------------|-------------------------------|
-| **Test Accuracy** | 82.14% | **85.22%** ⭐ |
-| **Precision** | 82.14% | 85.47% |
-| **Recall** | 82.14% | 85.18% |
-| **F1-Score** | 82.14% | **85.18%** ⭐ |
-| **Test Loss** | - | 0.2607 |
-| **Best Model** | Val Acc: 87.25% | **Highest Performance** ✅ |
+Confision Matriks
+<img width="761" height="590" alt="Image" src="https://github.com/user-attachments/assets/51890ad5-2b38-4184-a209-bfdf575b405d" />
 
-**Kesimpulan**: DistilBERT menunjukkan performa superior dengan accuracy 85.22% dan F1-Score 85.18%, mengalahkan SVM dengan margin 3.08%.
+| Metric | Value |
+|--------|-------|
+| **Test Accuracy** | **82.14%** |
+| **Precision** | **82.14%** |
+| **Recall** | **82.14%** |
+| **F1-Score** | **82.14%** |
+| **Best Model** | **SVM** (Val Acc: 87.25%) |
 
 ### 🚀 SENTIMENT ANALYSIS - TRAINING WITH COMBINED DATA
 
@@ -95,7 +94,6 @@ Loading: combined_training_data.csv
 | Kelas | Count | Persentase |
 |-------|-------|-----------|
 | Negative | 1,158 | 50.5% |
-| Neutral | 0 | 0.0% |
 | Positive | 1,137 | 49.5% |
 
 **Data Split (Train:Val:Test = 80:10:10):**
