@@ -81,10 +81,10 @@ Proyek ini menyelidiki sentimen opini mahasiswa Indonesia terhadap penggunaan Ar
 **Kesimpulan**: DistilBERT menunjukkan performa superior dengan accuracy 85.22% dan F1-Score 85.18%, mengalahkan SVM dengan margin 3.08%.
 
 **📊 Confusion Matrix DistilBERT:**
-<img width="500" height="500" alt="Image" src="https://github.com/user-attachments/assets/473453e0-1546-40ca-889e-91bdc71fd365" />
+<img width="500" height="400" alt="Image" src="https://github.com/user-attachments/assets/473453e0-1546-40ca-889e-91bdc71fd365" />
 
 **📊 Confusion Matrix SVM:**
-<img width="500" height="500" alt="Image" src="https://github.com/user-attachments/assets/51890ad5-2b38-4184-a209-bfdf575b405d" />
+<img width="500" height="400" alt="Image" src="https://github.com/user-attachments/assets/51890ad5-2b38-4184-a209-bfdf575b405d" />
 
 ### 🚀 SENTIMENT ANALYSIS - TRAINING WITH COMBINED DATA
 
