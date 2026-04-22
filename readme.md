@@ -20,7 +20,7 @@
 
 ## 📝 Deskripsi Proyek
 
-Proyek ini menyelidiki sentimen opini mahasiswa Indonesia terhadap penggunaan Artificial Intelligence (AI) dalam konteks pendidikan tinggi. Menggunakan teknik Natural Language Processing dan Machine Learning, kami membangun model klasifikasi untuk menganalisis apakah opini terhadap penggunaan AI bersifat **Positif**, **Netral**, atau **Negatif**.
+Proyek ini menyelidiki sentimen opini mahasiswa Indonesia terhadap penggunaan Artificial Intelligence (AI) dalam konteks pendidikan tinggi. Menggunakan teknik Natural Language Processing dan Machine Learning, kami membangun model klasifikasi untuk menganalisis apakah opini terhadap penggunaan AI bersifat **Positif**, atau **Negatif**.
 
 ### 🎯 Tujuan
 - Memahami sentimen dan persepsi mahasiswa terhadap AI di perguruan tinggi
@@ -35,7 +35,6 @@ Proyek ini menyelidiki sentimen opini mahasiswa Indonesia terhadap penggunaan Ar
 - **Jumlah Data**: ~1000+ tweets/opini
 - **Label**: 
   - `1` - Positif (mendukung penggunaan AI)
-  - `0` - Netral (objektif, tanpa opini jelas)
   - `-1` - Negatif (kritis/khawatir)
 - **Bahasa**: Indonesian
 
@@ -69,6 +68,9 @@ Proyek ini menyelidiki sentimen opini mahasiswa Indonesia terhadap penggunaan Ar
 ## � Model Performance & Training Results
 
 ### 🏆 Final Results
+
+Confision Matriks
+<img width="761" height="590" alt="Image" src="https://github.com/user-attachments/assets/51890ad5-2b38-4184-a209-bfdf575b405d" />
 
 | Metric | Value |
 |--------|-------|
