@@ -92,7 +92,6 @@ Loading: combined_training_data.csv
 | Kelas | Count | Persentase |
 |-------|-------|-----------|
 | Negative | 1,158 | 50.5% |
-| Neutral | 0 | 0.0% |
 | Positive | 1,137 | 49.5% |
 
 **Data Split (Train:Val:Test = 80:10:10):**
