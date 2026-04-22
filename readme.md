@@ -84,7 +84,7 @@ Proyek ini menyelidiki sentimen opini mahasiswa Indonesia terhadap penggunaan Ar
 <img width="500" height="400" alt="Image" src="https://github.com/user-attachments/assets/473453e0-1546-40ca-889e-91bdc71fd365" />
 
 **📊 Confusion Matrix SVM:**
-<img width="500" height="400" alt="Image" src="https://github.com/user-attachments/assets/51890ad5-2b38-4184-a209-bfdf575b405d" />
+<img width="500" height="400" alt="Image" src="https://github.com/user-attachments/assets/d95a5833-c93d-43c2-82b7-ba0ff206498f" />
 
 ### 🚀 SENTIMENT ANALYSIS - TRAINING WITH COMBINED DATA
 
