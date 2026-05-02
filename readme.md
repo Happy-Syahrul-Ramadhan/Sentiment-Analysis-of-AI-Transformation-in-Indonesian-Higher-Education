@@ -1,281 +1,239 @@
-# 🤖 Sentiment Analysis: AI Transformation in Indonesian Higher Education
+# Sentiment Analysis of AI Adoption in Indonesian Higher Education
 
-## 🎨 Web Application
+Repositori ini berisi implementasi penelitian **"Sentiment Analysis of AI Adoption in Indonesian Higher Education Using Machine Learning and Transformer-Based Models"**. Proyek ini membandingkan pendekatan machine learning berbasis **TF-IDF** dengan model deep learning berbasis **DistilBERT** untuk klasifikasi sentimen opini mahasiswa Indonesia terhadap penggunaan Artificial Intelligence (AI) di lingkungan perguruan tinggi.
+
+## Link Paper
+https://arxiv.org/pdf/2604.27439
+
+## Web Application
 
 **Live Demo**: [Hugging Face Spaces](https://huggingface.co/spaces/syahrul19112003/deteksi-sentimen-terhadap-penggunaan-AI-di-lingkungan-perguruan-tinggi)
 
-**Natural Language Processing (NLP)**
+Aplikasi web memungkinkan pengguna memasukkan teks opini tentang penggunaan AI di perguruan tinggi dan mendapatkan prediksi sentimen secara real-time.
 
----
+## Authors
 
-## 👥 Anggota TIM
+| Nama | Afiliasi | Email / GitHub |
+|------|----------|----------------|
+| Happy Syahrul Ramadhan | Faculty of Science, Sumatra Institute of Technology | happy.122450013@student.itera.ac.id / [@Happy-Syahrul-Ramadhan](https://github.com/Happy-Syahrul-Ramadhan) |
+| Ahmad Sahidin Akbar | Faculty of Science, Sumatra Institute of Technology | ahmad.122450044@student.itera.ac.id / [@Masahid](https://github.com/AhmadSahidinAkbar) |
+| Karin Yehezkiel Sinaga | Faculty of Science, Sumatra Institute of Technology | karin.123410029@student.itera.ac.id / [@karinyehzkielsinaga](https://github.com/karinyehzkielsinaga) |
 
-| Nama | NIM | Jurusan | GitHub |
-|------|-----|---------|--------|
-| Happy Syahrul Ramadhan | 122450013 | Sains Data | [@Happy-Syahrul-Ramadhan](https://github.com/Happy-Syahrul-Ramadhan) |
-| Ahmad Sahidin Akbar | 122450044 | Sains Data | [@Masahid](https://github.com/AhmadSahidinAkbar) |
-| Karin Yehezkiel Sinaga | 123410029 | Sains Aktuaria | [@karinyehzkielsinaga](https://github.com/karinyehzkielsinaga) |
+## Project Overview
 
----
+Penggunaan AI dalam pendidikan tinggi menghadirkan peluang seperti peningkatan efisiensi belajar, akses informasi yang lebih luas, dan dukungan terhadap fleksibilitas akademik. Namun, adopsi AI juga menimbulkan kekhawatiran terkait penyalahgunaan, ketergantungan terhadap keluaran AI, serta potensi penurunan kemampuan berpikir kritis mahasiswa.
 
-## 📝 Deskripsi Proyek
+Proyek ini menganalisis opini mahasiswa Indonesia terhadap penggunaan AI di perguruan tinggi melalui klasifikasi sentimen biner:
 
-Proyek ini menyelidiki sentimen opini mahasiswa Indonesia terhadap penggunaan Artificial Intelligence (AI) dalam konteks pendidikan tinggi. Menggunakan teknik Natural Language Processing dan Machine Learning, kami membangun model klasifikasi untuk menganalisis apakah opini terhadap penggunaan AI bersifat **Positif**, atau **Negatif**.
+- **Positive**: opini yang mendukung atau menilai positif penggunaan AI.
+- **Negative**: opini yang kritis, khawatir, atau menilai negatif penggunaan AI.
 
-### 🎯 Tujuan
-- Memahami sentimen dan persepsi mahasiswa terhadap AI di perguruan tinggi
-- Mengembangkan model NLP yang akurat untuk klasifikasi sentimen teks bahasa Indonesia
-- Mengidentifikasi peluang dan tantangan implementasi AI dalam pendidikan
+## Research Objectives
 
----
+- Menganalisis sentimen mahasiswa Indonesia terhadap adopsi AI di perguruan tinggi.
+- Membandingkan performa model machine learning klasik dan Transformer-based deep learning.
+- Mengevaluasi efektivitas **SVM dengan TF-IDF** sebagai baseline yang efisien.
+- Mengevaluasi kemampuan **DistilBERT** dalam menangkap konteks bahasa untuk klasifikasi sentimen.
+- Menyediakan aplikasi web interaktif untuk prediksi sentimen secara real-time.
 
-## 📊 Dataset
+## Dataset
 
-- **Sumber**: [Sentimen ChatGPT Mahasiswa - Kaggle](https://www.kaggle.com/datasets/bintangaprianta/sentimen-chatgpt-mahasiswa)
-- **Jumlah Data**: ~1000+ tweets/opini
-- **Label**: 
-  - `1` - Positif (mendukung penggunaan AI)
-  - `-1` - Negatif (kritis/khawatir)
-- **Bahasa**: Indonesian
+Dataset akhir terdiri dari **2,295 sampel** untuk klasifikasi sentimen biner. Dataset dibentuk dari gabungan opini mahasiswa tentang AI dan data leksikal sentimen positif-negatif.
 
----
+| Data Source | Number of Samples | Description |
+|-------------|------------------:|-------------|
+| Student Opinions on AI | 1,154 | Main research data |
+| Positive and Negative Lexical Dictionary | 1,141 | Additional sentiment-based data |
+| **Total** | **2,295** | Final dataset |
 
-## 🛠️ Metodologi
+Distribusi kelas pada dataset akhir relatif seimbang.
 
-### Data Preprocessing
-1. **Cleaning**: Hapus URL, mentions, hashtags, punctuation
-2. **Normalisasi**: Konversi slang Indonesia ke bahasa baku (e.g., "yg" → "yang")
-3. **Tokenization**: Pemisahan teks menjadi token individual
-4. **Lowercase**: Standardisasi huruf kecil
+| Class | Number of Samples | Percentage |
+|-------|------------------:|-----------:|
+| Negative | 1,158 | 50.46% |
+| Positive | 1,137 | 49.54% |
+| **Total** | **2,295** | **100%** |
 
-```python
-# Contoh preprocessing
-"Wah, penggunaan ChatGPT di kampus harus diwaspadai!" 
-→ "wah penggunaan chatgpt di kampus harus diwaspadai"
+Data dibagi menjadi training, validation, dan test set dengan rasio 80:10:10.
+
+| Subset | Number of Samples | Percentage |
+|--------|------------------:|-----------:|
+| Training Data | 1,632 | 80% |
+| Validation Data | 204 | 10% |
+| Test Data | 459 | 10% |
+
+## Research Workflow
+
+Alur penelitian terdiri dari beberapa tahap utama:
+
+1. Data loading.
+2. Data cleaning dan preprocessing.
+3. Data splitting.
+4. Machine learning branch: TF-IDF, model training, model selection, dan evaluation.
+5. Deep learning branch: DistilBERT tokenizer, fine-tuned DistilBERT, dan evaluation.
+6. Model comparison.
+7. Deployment ke aplikasi web.
+
+## Preprocessing
+
+Tahap preprocessing dilakukan untuk membersihkan dan menstandarkan teks sebelum digunakan dalam pelatihan model.
+
+Langkah-langkah preprocessing meliputi:
+
+- Lowercasing.
+- Menghapus URL.
+- Menghapus mentions.
+- Menghapus hashtags.
+- Menghapus punctuation.
+- Menghapus extra whitespace.
+- Normalisasi kata tidak baku.
+- Normalisasi karakter berulang.
+
+Contoh:
+
+```text
+Input  : Wah, penggunaan ChatGPT di kampus harus diwaspadai!
+Output : wah penggunaan chatgpt di kampus harus diwaspadai
 ```
 
-### Feature Extraction
-- **TF-IDF Vectorization**: Mengkonversi teks ke vektor numerik
-- **N-grams**: Unigram & Bigram untuk capturing context
+## Methodology
 
-### Model Classification
-- **Algorithm**: Support Vector Machine (SVM)
-- **Library**: scikit-learn
-- **Evaluation Metrics**: Accuracy, Precision, Recall, F1-Score
+Penelitian ini menggunakan dua pendekatan utama untuk klasifikasi sentimen.
 
----
+### 1. Machine Learning with TF-IDF
 
-## � Model Performance & Training Results
+Pada pendekatan machine learning, teks yang telah diproses dikonversi menjadi fitur numerik menggunakan **TF-IDF** dengan unigram dan bigram. TF-IDF vectorizer hanya di-fit pada data training untuk menghindari data leakage.
 
-### 🏆 Model Comparison - Final Results
+Model yang dibandingkan:
 
-| Metric | **SVM (TF-IDF)** | **DistilBERT (Deep Learning)** |
-|--------|-------------------|-------------------------------|
-| **Test Accuracy** | 82.14% | **85.22%** ⭐ |
-| **Precision** | 82.14% | 85.47% |
-| **Recall** | 82.14% | 85.18% |
-| **F1-Score** | 82.14% | **85.18%** ⭐ |
-| **Test Loss** | - | 0.2607 |
-| **Best Model** | Val Acc: 87.25% | **Highest Performance** ✅ |
+| Model | Configuration | Main Parameter | Reason for Use |
+|-------|---------------|----------------|----------------|
+| LightGBM | `LGBMClassifier` | Boosting ensemble | Fast and efficient initial baseline |
+| Random Forest | `RandomForestClassifier` | Parallel ensemble | Robust and able to reduce overfitting through averaging |
+| SVM | `SVC(kernel='rbf', C=1.0)` | Kernel-based classifier | Suitable for high-dimensional text data and non-linear separation |
 
-**Kesimpulan**: DistilBERT menunjukkan performa superior dengan accuracy 85.22% dan F1-Score 85.18%, mengalahkan SVM dengan margin 3.08%.
+Detail parameter:
 
-**📊 Confusion Matrix DistilBERT:**
-<img width="500" height="400" alt="Image" src="https://github.com/user-attachments/assets/473453e0-1546-40ca-889e-91bdc71fd365" />
+- **LightGBM**: `n_estimators=100`, `max_depth=10`, `learning_rate=0.1`
+- **Random Forest**: `n_estimators=100`, `max_depth=20`, `min_samples_split=5`
+- **SVM**: RBF kernel, `C=1.0`
+- Semua model menggunakan `random_state=42` untuk reproducibility.
 
-**📊 Confusion Matrix SVM:**
-<img width="500" height="400" alt="Image" src="https://github.com/user-attachments/assets/d95a5833-c93d-43c2-82b7-ba0ff206498f" />
+### 2. Transformer-Based Deep Learning with DistilBERT
 
-### 🚀 SENTIMENT ANALYSIS - TRAINING WITH COMBINED DATA
+Pendekatan deep learning menggunakan **DistilBERT** untuk menangkap informasi kontekstual dari teks. Input teks ditokenisasi menjadi `input_ids` dan `attention_mask`, kemudian diproses oleh encoder DistilBERT dan classification head untuk prediksi sentimen negatif atau positif.
 
-#### 📄 Data Loading & Preparation
+Konfigurasi DistilBERT:
 
-```
-Loading: combined_training_data.csv
-   ✓ Encoding: utf-8
-   Total rows: 2,295
-```
+| Parameter | Value |
+|----------|-------|
+| Model | `distilbert-base-uncased` |
+| Max Length | 128 |
+| Vocabulary Size | 30,522 |
+| Batch Size | 64 |
+| Learning Rate | 1e-6 |
+| Epochs | 100 |
+| Early Stopping Patience | 5 |
+| Weight Decay | 0.001 |
+| Dropout | 0.5 |
+| Warmup Steps | 100 |
+| Optimizer | AdamW |
+| Scheduler | Linear |
+| Best Metric | Validation F1-score |
+| Device | CUDA |
 
-**Class Distribution:**
-| Kelas | Count | Persentase |
-|-------|-------|-----------|
-| Negative | 1,158 | 50.5% |
-| Positive | 1,137 | 49.5% |
+## Evaluation Metrics
 
-**Data Split (Train:Val:Test = 80:10:10):**
-- Train: 1,632 samples (80%)
-- Val: 204 samples (10%)
-- Test: 459 samples (10%)
+Model dievaluasi menggunakan metrik berikut:
 
-#### 📝 Feature Extraction
+- **Accuracy**: proporsi prediksi benar dari seluruh data.
+- **Precision**: ketepatan model dalam memprediksi kelas positif.
+- **Recall**: kemampuan model mengenali sampel positif aktual.
+- **F1-score**: harmonic mean antara precision dan recall.
 
-```
-TF-IDF Vectorization:
-   ✓ Feature matrix shape: (1,632, 2,257)
-   ✓ N-grams: Unigram & Bigram
-```
+## Results
 
-#### ▶️ Model Training Comparison
+### Machine Learning Results
 
-| Model | Validation Accuracy | Training Time |
-|-------|-------------------|---------------|
-| Naive Bayes | 84.80% | 0.00s |
-| Random Forest | 62.25% | 0.19s |
-| **SVM ⭐** | **87.25%** | **0.15s** |
+| Model | Approach | Validation Accuracy | Test Accuracy | Test F1-score | Training Time |
+|-------|----------|--------------------:|--------------:|--------------:|--------------:|
+| LightGBM | Machine Learning | 57.35% | 49.67% | 48.46% | 0.057s |
+| Random Forest | Machine Learning | 62.25% | 58.61% | 56.48% | 0.216s |
+| SVM | Machine Learning | **87.25%** | **82.14%** | **82.14%** | 0.210s |
 
-#### 🧪 Test Set Evaluation
+SVM menjadi model machine learning terbaik. Model ini berhasil mengklasifikasikan **377 dari 459** sampel test dengan benar, terdiri dari 190 sampel negatif dan 187 sampel positif. Distribusi kesalahan relatif seimbang, sehingga performanya stabil pada kedua kelas.
 
-**SVM Classification Report:**
-```
-                precision    recall  f1-score   support
+### DistilBERT Results
 
-    Negative       0.83      0.82      0.82       232
-    Positive       0.82      0.82      0.82       227
+| Class | Precision | Recall | F1-score | Support |
+|-------|----------:|-------:|---------:|--------:|
+| Negative | 0.8240 | 0.8879 | 0.8548 | 116 |
+| Positive | 0.8762 | 0.8070 | 0.8402 | 114 |
+| **Accuracy** |  |  | **0.8478** | 230 |
+| **Macro Avg** | 0.8501 | 0.8475 | 0.8475 | 230 |
+| **Weighted Avg** | 0.8499 | 0.8478 | 0.8475 | 230 |
 
-    accuracy                           0.82       459
-   macro avg       0.82      0.82      0.82       459
-weighted avg       0.82      0.82      0.82       459
-```
+DistilBERT menghasilkan performa test terbaik secara keseluruhan dengan:
 
----
+- **Test Accuracy**: 84.78%
+- **Weighted F1-score**: 84.75%
+- **Final Train Loss**: 0.2827
+- **Final Validation Loss**: 0.3649
 
-### 🤖 DEEP LEARNING - DistilBERT Model Training
+Model lebih sensitif terhadap kelas negatif dan lebih presisi pada prediksi kelas positif, tetapi F1-score kedua kelas tetap relatif seimbang.
 
-#### 📋 Architecture & Configuration
-```
-Model: DistilBERT (Hugging Face)
-   ✓ Pre-trained: Distilled version of BERT
-   ✓ Parameters: 66M (lightweight)
-   ✓ Input: Tokenized text sequences
-   ✓ Output: Sentiment classification (binary)
-```
+### Final Model Comparison
 
-#### 🧪 DistilBERT - Test Set Evaluation
+| Model | Approach | Validation Accuracy | Test Accuracy | Test F1-score | Training Time |
+|-------|----------|--------------------:|--------------:|--------------:|--------------:|
+| LightGBM | Machine Learning | 57.35% | 49.67% | 48.46% | 0.057s |
+| Random Forest | Machine Learning | 62.25% | 58.61% | 56.48% | 0.216s |
+| SVM | Machine Learning | **87.25%** | 82.14% | 82.14% | **0.210s** |
+| DistilBERT | Transformer-based Deep Learning | 81.74% | **84.78%** | **84.75%** | 22.8m |
 
-**Overall Metrics:**
-```
-Test Loss:     0.2607
-Test Accuracy: 85.22%
-Test F1-Score: 85.18%
-```
+### Key Findings
 
-**Detailed Classification Report:**
-```
-              precision    recall  f1-score   support
+- **DistilBERT** memberikan performa test terbaik dengan accuracy 84.78% dan weighted F1-score 84.75%.
+- **SVM dengan TF-IDF** menjadi model machine learning terbaik dengan test accuracy dan F1-score 82.14%.
+- DistilBERT mengungguli SVM sebesar **2.64% pada accuracy** dan **2.61% pada F1-score**.
+- SVM tetap menarik untuk penggunaan dengan keterbatasan resource karena training jauh lebih cepat.
+- LightGBM dan Random Forest kurang optimal untuk sparse high-dimensional TF-IDF features dibandingkan SVM.
 
-    negative       0.8254    0.8966    0.8595       116
-    positive       0.8846    0.8070    0.8440       114
+## Deployment
 
-    accuracy                         0.8522       230
-   macro avg       0.8550    0.8518    0.8518       230
-weighted avg       0.8547    0.8522    0.8518       230
-```
+Model terbaik dideploy sebagai aplikasi web interaktif menggunakan **Gradio** dan **Hugging Face Spaces**. Aplikasi memungkinkan pengguna memasukkan teks opini dan menerima prediksi sentimen beserta confidence score.
 
-**Per-Class Performance:**
+### Features
 
-| Kelas | Precision | Recall | F1-Score | Support |
-|-------|-----------|--------|----------|---------|
-| Negative | 0.8254 | 0.8966 | 0.8595 | 116 |
-| Positive | 0.8846 | 0.8070 | 0.8440 | 114 |
-| **Weighted Avg** | **0.8547** | **0.8522** | **0.8518** | **230** |
+- Input teks bebas tentang opini penggunaan AI di perguruan tinggi.
+- Prediksi sentimen biner: positive atau negative.
+- Confidence score untuk hasil prediksi.
+- Interface sederhana berbasis Gradio.
+- Deployment online melalui Hugging Face Spaces.
 
-#### 📊 Model Insights
+### Technology Stack
 
-✅ **Superior Performance**:
-   - Accuracy 3.08% lebih tinggi dari SVM (85.22% vs 82.14%)
-   - F1-Score 3.04% lebih tinggi (85.18% vs 82.14%)
-   - Balanced precision dan recall untuk kedua kelas
+- **Language**: Python
+- **Machine Learning**: scikit-learn
+- **Deep Learning**: PyTorch, Transformers
+- **Data Processing**: pandas, numpy
+- **Web Interface**: Gradio
+- **Deployment**: Hugging Face Spaces
 
-✅ **Per-Class Analysis**:
-   - Negative class: Recall lebih tinggi (89.66%) - lebih sensitif mendeteksi negatif
-   - Positive class: Precision lebih tinggi (88.46%) - lebih akurat memprediksi positif
-   - Trade-off yang sehat antara kedua metrik
+## Repository Structure
 
-✅ **Regularization Effectiveness**:
-   - Test Loss rendah (0.2607) menunjukkan good generalization
-   - Minimal gap antara training dan test performance
-
----
-
-### 📈 Model Comparison & Recommendation
-
-#### Performa Keseluruhan
-
-```
-SVM (TF-IDF) vs DistilBERT:
-├── SVM
-│   ├── Test Acc: 82.14%
-│   ├── Training: Cepat (0.15s)
-│   ├── Feature: Manual (TF-IDF)
-│   └── Interpretability: Tinggi ✓
-│
-└── DistilBERT ⭐
-    ├── Test Acc: 85.22% (BEST)
-    ├── Training: Moderate (GPU optimized)
-    ├── Feature: Automatic (Pre-trained embeddings)
-    └── Interpretability: Moderate
-```
-
-#### 🎯 Rekomendasi
-
-- **Untuk Production**: Gunakan **DistilBERT** untuk akurasi maksimal (85.22%)
-- **Untuk Deployment**: SVM lebih ringan, cocok untuk resource-limited environments
-- **Untuk Research**: DistilBERT memberikan insights deeper tentang contextual meaning
-- **Hybrid Approach**: Bisa ensemble kedua model untuk robustness maksimal
-
----
-
-## 🛠️ Metodologi Pendekatan Dual-Model
-
-Proyek ini mengimplementasikan **dua pendekatan berbeda** untuk klasifikasi sentimen:
-
-### 1️⃣ **Traditional Machine Learning - SVM**
-- **Feature Engineering**: Manual menggunakan TF-IDF + N-grams
-- **Model**: Support Vector Machine dengan RBF kernel
-- **Kelebihan**: 
-  - Fast training time (0.15s)
-  - Interpretable decision boundaries
-  - Low computational requirements
-- **Kelemahan**:
-  - Memerlukan preprocessing yang careful
-  - Tidak memanfaatkan contextual information
-
-### 2️⃣ **Deep Learning - DistilBERT** 
-- **Feature Engineering**: Automatic menggunakan pre-trained transformer
-- **Model**: DistilBERT (distilled BERT) fine-tuned untuk klasifikasi biner
-- **Kelebihan**:
-  - Contextual word embeddings
-  - Superior performance (85.22% accuracy)
-  - Transfer learning dari dataset besar
-- **Kelemahan**:
-  - Lebih resource-intensive
-  - Membutuhkan GPU untuk training optimal
-  - Kurang interpretable (black-box)
-
-### 📊 Perbandingan Metodologi
-
-| Aspek | SVM (TF-IDF) | DistilBERT |
-|-------|-------------|-----------|
-| Feature Extraction | Manual | Automatic |
-| Preprocessing | Intensif | Minimal |
-| Accuracy | 82.14% | **85.22%** |
-| Training Speed | ⚡ Cepat | ⏱️ Moderate |
-| Resource Usage | 💾 Rendah | 💪 Tinggi |
-| Context Understanding | ❌ Limited | ✅ Excellent |
-| Interpretability | ✅ Tinggi | ⚠️ Rendah |
-
-```
+```text
 sentimen analisis/
-├── Deep Learning/                  # Deep Learning module with full training
+├── Deep Learning/
 │   ├── data/
-│   │   ├── combined_training_data.csv    # Combined dataset (2,295 rows)
+│   │   ├── combined_training_data.csv
 │   │   ├── data_ai.csv
 │   │   ├── negasi.txt
 │   │   ├── s-neg.txt
 │   │   └── s-pos.txt
 │   ├── models/
-│   │   ├── sentiment_classifier.pkl     # Trained classifier model
-│   │   └── vectorizer.pkl               # TF-IDF vectorizer
+│   │   ├── sentiment_classifier.pkl
+│   │   └── vectorizer.pkl
 │   ├── plots/
 │   │   └── training_metrics.csv
 │   ├── clean_combined_data.py
@@ -288,83 +246,68 @@ sentimen analisis/
 │   ├── training.py
 │   └── utils.py
 ├── data/
-│   └── data_ai.xlsx              # Original dataset
+│   └── data_ai.xlsx
 ├── notebook/
 │   └── sentiment_analisis_about_AI_in_Academic.ipynb
 ├── deteksi-opini-terhadap-penggunaan-ai/
-│   ├── app.py                    # Gradio web app
+│   ├── app.py
 │   ├── requirements.txt
 │   └── README.md
-└── readme.md                      # Dokumentasi proyek
+└── README.md
 ```
 
----
-
-## 🚀 Quick Start
+## Quick Start
 
 ### 1. Clone Repository
+
 ```bash
 git clone https://github.com/Happy-Syahrul-Ramadhan/Sentiment-Analysis-of-AI-Transformation-in-Indonesian-Higher-Education.git
 cd "sentimen analisis"
 ```
 
 ### 2. Setup Environment
+
 ```bash
-# Buat virtual environment
 python -m venv venv
-source venv/bin/activate  # Linux/Mac
-# atau
-venv\Scripts\activate  # Windows
+source venv/bin/activate
+# Windows:
+# venv\Scripts\activate
 
-# Install dependencies
-cd deteksi-opini-terhadap-penggunaan-ai
-pip install -r requirements.txt
+pip install -r deteksi-opini-terhadap-penggunaan-ai/requirements.txt
 ```
 
-### 3. Run App Locally
+### 3. Run Web App Locally
+
 ```bash
+cd deteksi-opini-terhadap-penggunaan-ai
 python app.py
-# Akses di: http://localhost:7860
 ```
 
-### 4. Run Deep Learning Training (Optional)
+Akses aplikasi di:
+
+```text
+http://localhost:7860
+```
+
+### 4. Run Machine Learning Training
+
 ```bash
 cd "Deep Learning"
-
-# Run SVM Training
 python training.py
-
-# Run DistilBERT Training (requires GPU for optimal performance)
-python train_distilbert.py
-# atau
-python train.py
-
-# Output: trained models, metrics, evaluation results, dan visualizations
 ```
 
-### 5. Model Comparison
+### 5. Run DistilBERT Training
+
 ```bash
-# Compare SVM vs DistilBERT predictions
-python compare_models.py
+cd "Deep Learning"
+python train.py
 ```
 
----
+> Catatan: Training DistilBERT disarankan menggunakan CUDA/GPU untuk waktu komputasi yang lebih efisien.
 
-### Fitur
-- ✅ Input teks bebas tentang opini AI
-- ✅ Prediksi sentimen real-time
-- ✅ Confidence score untuk setiap kategori
-- ✅ Contoh teks pre-built untuk testing
+## Dependencies
 
-### Stack Teknologi
-- **Frontend**: Gradio (UI interaktif)
-- **Backend**: Python (scikit-learn)
-- **Deployment**: Hugging Face Spaces
-
-
-## 📚 Dependencies
-
-```
+```text
 # Web App
 gradio>=4.0.0
 pandas>=2.0.0
@@ -373,6 +316,7 @@ openpyxl
 
 # Machine Learning
 scikit-learn>=1.3.0
+lightgbm
 
 # Deep Learning
 torch>=2.0.0
@@ -380,24 +324,33 @@ transformers>=4.30.0
 datasets>=2.12.0
 ```
 
+## Citation
 
+Jika menggunakan kode atau hasil dari proyek ini, silakan sitasi paper berikut:
 
-## 📖 Referensi & Sumber Daya
+```bibtex
+@article{ramadhan2026sentiment,
+  title   = {Sentiment Analysis of AI Adoption in Indonesian Higher Education Using Machine Learning and Transformer-Based Models},
+  author  = {Ramadhan, Happy Syahrul and Akbar, Ahmad Sahidin and Sinaga, Karin Yehezkiel and Muthoharoh, Luluk and Satria, Ardika and Manullang, Martin C. T.},
+  year    = {2026},
+  journal = {arXiv preprint arXiv:2604.27439}
+}
+```
 
-- [Scikit-learn Documentation](https://scikit-learn.org/)
-- [Gradio Documentation](https://www.gradio.app/)
-- [Indonesian NLP Resources](https://github.com/NoveliBrains/Indonesian-NLP)
-- [TF-IDF Explained](https://en.wikipedia.org/wiki/Tf%E2%80%93idf)
+## References
 
----
+- Bing Liu. *Sentiment Analysis and Opinion Mining*. Morgan & Claypool Publishers, 2012.
+- Ashish Vaswani et al. *Attention Is All You Need*. NeurIPS, 2017.
+- Walaa Medhat, Ahmed Hassan, and Hoda Korashy. *Sentiment analysis algorithms and applications: A survey*. Ain Shams Engineering Journal, 2014.
+- Bryan Wilie et al. *IndoNLU: Benchmark and Resources for Evaluating Indonesian Natural Language Understanding*. AACL-IJCNLP, 2020.
+- Victor Sanh et al. *DistilBERT, a distilled version of BERT: smaller, faster, cheaper and lighter*. NeurIPS EMC2 Workshop, 2019.
+- Jacob Devlin et al. *BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding*. NAACL-HLT, 2019.
+- Samuel Cahyawijaya et al. *NusaCrowd: Open Source Initiative for Indonesian NLP Resources*. ACL Findings, 2023.
 
-## 📄 Lisensi
+## License
 
 Project ini menggunakan lisensi **MIT**. Lihat file [LICENSE](LICENSE) untuk informasi lengkap.
 
----
+## Contact
 
-## 📞 Kontak & Support
-
-Jika ada pertanyaan atau masukan, silakan buat issue di repository ini atau hubungi anggota kelompok.
-
+Jika ada pertanyaan atau masukan, silakan buat issue di repository ini atau hubungi anggota tim.
