@@ -11,7 +11,7 @@ https://arxiv.org/pdf/2604.27439
 
 Aplikasi web memungkinkan pengguna memasukkan teks opini tentang penggunaan AI di perguruan tinggi dan mendapatkan prediksi sentimen secara real-time.
 
-## Authors
+## Anggota Tim
 
 | Nama | Afiliasi | Email / GitHub |
 |------|----------|----------------|
